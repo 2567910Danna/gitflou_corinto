@@ -1,5 +1,4 @@
 from openpyxl import load_workbook
-from datetime import datetime
 
 rut=r'datosProductos.xlsx'
 
@@ -121,14 +120,14 @@ while True:
     print('Comando invalido, por favor eliga una opcion valida')
   elif accion==1:
     opcConsulta=''
-    print('Indique la categoria del producto que desea consultar:\nTodos los productos: 1\nComputación: 2\nAlimentario: 3\nHigiene: 4\nEscolar: 5')
+    print('Indique la categoria del producto que desea consultar:\nTodos los productos: 1\nCPU: 2\nAlimentario: 3\nHigiene: 4\nEscolar: 5\nAccesorios: 6\nTorre PC: 7')
     opcConsulta=input('Escriba la categoria que desee consultar: ')
     if opcConsulta=='1':
       print('\n\n** Consultado todos los productos **')
       leer(rut,'todo')
     elif opcConsulta=='2':
       print('\n\n** Consultado todos los productos **')
-      leer(rut,'computacion')
+      leer(rut,'CPU')
     elif opcConsulta=='3':
       print('\n\n** Consultado todos los productos **')
       leer(rut,'alimentario')
@@ -138,6 +137,12 @@ while True:
     elif opcConsulta=='5':
       print('\n\n** Consultado todos los productos **')
       leer(rut,'escolar')
+    elif opcConsulta=='6':
+      print('\n\n** Consultado todos los productos **')
+      leer(rut,'accesorios')
+    elif opcConsulta=='7':
+      print('\n\n** Consultado todos los productos **')
+      leer(rut,'torre pc')
   elif accion==2:
     datosActualizados={'nombre':'','categoria':'','precio':'','cantidad':''}
     print('** Actualizar Tarea **\n')
@@ -146,17 +151,22 @@ while True:
     print('\n** Nuevo nombre **\n** Nota: si no desea actualizar el nombre solo oprima ENTER **')
     datosActualizados['nombre']=input('Indique el nuevo nombre de el producto: ')
 
-    print('\n** Nueva categoria **\nComputación: 1\nAlimentario: 2\nHigiene: 3\nEscolar: 4\n** Nota: si no desea actualizar la categoria solo oprima ENTER **')
+    print('\n** Nueva categoria **\nCPU: 1\nAlimentario: 2\nHigiene: 3\nEscolar: 4\nAccesorios: 5\nTorre PC: 6\n** Nota: si no desea actualizar la categoria solo oprima ENTER **')
     
-    estadoNuevo=input('Indique el nuevo estado de el producto: ')
+    estadoNuevo=input('Indique la nueva categoria de el producto: ')
     if estadoNuevo=='1':
-      datosActualizados['categoria']='computacion'
+      datosActualizados['categoria']='cpu'
     elif estadoNuevo=='2':
       datosActualizados['categoria']='alimentario'
     elif estadoNuevo=='3':
       datosActualizados['categoria']='higiene'
     elif estadoNuevo=='4':
       datosActualizados['categoria']='escolar'
+    elif estadoNuevo=='5':
+      datosActualizados['categoria']='accesorios'
+    elif estadoNuevo=='6':
+      datosActualizados['categoria']='torre pc'
+    
     print('\n** Nuevo precio **\n** Nota: si no desea actualizar el precio solo oprima ENTER **')
     datosActualizados['precio']=input('Indique el nuevo precio de el producto: ')
 
@@ -171,17 +181,22 @@ while True:
     print('** Nombre **\n')
     datosActualizados['nombre']=input('Indique el nombre de el producto: ')
 
-    print('\n** Categoria **\nComputación: 1\nAlimentario: 2\nHigiene: 3\nEscolar: 4')
+    print('\n** Categoria **\nCPU: 1\nAlimentario: 2\nHigiene: 3\nEscolar: 4\nAccesorios: 5\nTorre PC: 6')
     
     estadoNuevo=input('Indique la categoria de el producto: ')
     if estadoNuevo=='1':
-      datosActualizados['categoria']='computacion'
+      datosActualizados['categoria']='cpu'
     elif estadoNuevo=='2':
       datosActualizados['categoria']='alimentario'
     elif estadoNuevo=='3':
       datosActualizados['categoria']='higiene'
     elif estadoNuevo=='4':
       datosActualizados['categoria']='escolar'
+    elif estadoNuevo=='5':
+      datosActualizados['categoria']='accesorios'
+    elif estadoNuevo=='6':
+      datosActualizados['categoria']='torre pc'
+    
     print('\n** Precio **')
     datosActualizados['precio']=input('Indique el precio de el producto: ')
     print('\n** cantidad **')
