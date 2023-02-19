@@ -205,4 +205,4 @@ while True:
   elif accion==4:
     print('\n** Eliminar producto **')
     iden=int(input('Indique el ID de el producto que desea eliminar: '))
-    borrar(rut,iden)
+    borrar(rut,iden) 
