@@ -1,7 +1,7 @@
 from openpyxl import load_workbook
 from datetime import datetime
 
-rut=r'crudDatos.xlsx'
+rut=r'datosTareas.xlsx'
 
 def leer(ruta:str, extraer:str):
   archivoExcel=load_workbook(ruta)
